@@ -1,0 +1,182 @@
+/* ==========================================================================
+   POLGASDUWA ARANYA SENASANA - ANIMATIONS & TRANSITIONS
+   ========================================================================== */
+
+/* Shimmer Effect on Gold Highlights */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #c99718 0%, #fff2b2 50%, #c99718 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s infinite linear;
+}
+
+/* Gentle Lotus Rotation */
+@keyframes softRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rotate-slow {
+  animation: softRotate 40s linear infinite;
+}
+
+/* Floating Meditation Effect */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-slow {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* Ken Burns Slide Zoom */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.ken-burns {
+  animation: kenBurnsZoom 8s ease-out forwards;
+}
+
+/* Pulse Glow for Sacred Stanza */
+@keyframes goldPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(201, 151, 24, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(243, 208, 104, 0.9));
+  }
+}
+
+.pulse-gold {
+  animation: goldPulse 3.5s infinite ease-in-out;
+}
+
+/* Fade In Up Elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Search Modal Overlay */
+.search-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 2, 2, 0.92);
+  z-index: 2100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.search-modal-backdrop.active {
+  display: flex;
+  animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.search-modal-box {
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+}
+
+.search-input-group {
+  position: relative;
+  width: 100%;
+}
+
+.search-large-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--accent-gold);
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  padding: 12px 60px 12px 10px;
+  outline: none;
+}
+
+.search-large-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.search-submit-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.search-close-btn {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.search-suggestions {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #ded3be;
+  font-size: 0.9rem;
+}
+
+.search-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 14px;
+  border-radius: 16px;
+  color: #faeed7;
+  cursor: pointer;
+  border: 1px solid rgba(201, 151, 24, 0.3);
+  transition: all 0.2s ease;
+}
+
+.search-tag:hover {
+  background: var(--accent-gold);
+  color: #2b0404;
+}
